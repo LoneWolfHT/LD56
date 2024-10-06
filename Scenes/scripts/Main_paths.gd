@@ -12,15 +12,15 @@ var foods = [
 
 var food = preload("res://Objects/Food.tscn")
 
-var cchance = 70
+var cchance = 70.0
 
 func _ready():
 	rng.randomize()
 
 func add_food():
 	var new = food.instantiate()
-
-	if rng.randi_range(1, cchance) == 1:
+	if rng.randi_range(1, int(cchance)) == 1:
+		cchance = maxf(cchance - 0.3, 32)
 		new.add_to_group("cheese")
 		new.get_node("Texture").texture = cheese
 	else:

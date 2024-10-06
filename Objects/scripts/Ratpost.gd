@@ -34,7 +34,7 @@ func _process(_delta):
 		$Placego.visible = false
 		$Placehere.visible = false
 
-	if player and player.carrying == "rat" and Input.is_action_just_pressed("action"):
+	if not has_rat and player and player.carrying == "rat" and Input.is_action_just_pressed("action"):
 		var rat = player.drop()
 
 		rat.rotation = 0

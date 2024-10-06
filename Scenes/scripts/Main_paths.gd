@@ -21,11 +21,10 @@ func add_food():
 	var new = food.instantiate()
 
 	if rng.randi_range(1, cchance) == 1:
-		cchance = max(cchance - 1, 12)
-
 		new.add_to_group("cheese")
 		new.get_node("Texture").texture = cheese
 	else:
+		cchance = maxf(cchance - 0.1, 12)
 		new.get_node("Texture").texture = foods[rng.randi_range(0, len(foods)-1)]
 		new.rotation = rng.randf_range(-PI, PI)
 

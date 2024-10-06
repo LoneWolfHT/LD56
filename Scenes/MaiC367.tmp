@@ -1,0 +1,236 @@
+[gd_scene load_steps=24 format=3 uid="uid://cvxstex4xqsxp"]
+
+[ext_resource type="Texture2D" uid="uid://bihynxcxfbcjp" path="res://Scenes/textures/Main_background.png" id="1_0eh56"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main.gd" id="1_fgyic"]
+[ext_resource type="PackedScene" uid="uid://ckyjk5cckkm3i" path="res://Entities/Player.tscn" id="2_fe4cs"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main_paths.gd" id="3_mrthl"]
+[ext_resource type="Texture2D" uid="uid://bsgrustk0cpgc" path="res://Scenes/textures/Main_belt.png" id="3_vt8ao"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main_people_paths.gd" id="6_04lj1"]
+[ext_resource type="PackedScene" uid="uid://cg1hmsde7laai" path="res://Entities/Rat.tscn" id="6_sipp8"]
+[ext_resource type="SpriteFrames" uid="uid://bq7iu278c4s5q" path="res://Entities/textures/WildRat.aseprite" id="7_rk0ur"]
+[ext_resource type="Texture2D" uid="uid://0u15ete11mnq" path="res://Scenes/textures/Main_sewer.png" id="8_q6ys3"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main_Sewer.gd" id="10_p7oxq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exeg7"]
+radius = 43.0116
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_37mbf"]
+radius = 77.0
+height = 400.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ocwd"]
+size = Vector2(808, 76)
+
+[sub_resource type="Curve2D" id="Curve2D_2ahi0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 34, 109, 0, 0, 0, 0, -244, 109)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_g1t1c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -137, -107, 0, 0, 0, 0, -139, -81, 0, 0, 0, 0, -5, -81, 0, 0, 0, 0, 22, -96, 0, 0, 0, 0, 38, -96, 0, 0, 0, 0, 38, 102)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_ajjv2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 1, 0, 0, 0, 0, -18, -16, 0, 0, 0, 0, -30, 6, 0, 0, 0, 0, -50, -15, 0, 0, 0, 0, -69, -19, 0, 0, 0, 0, -60, -2, 0, 0, 0, 0, -71, 14, 0, 0, 0, 0, -47, 16, 0, 0, 0, 0, -46, 1, 0, 0, 0, 0, -34, -16, 0, 0, 0, 0, -17, 10, 0, 0, 0, 0, 10, 18, 0, 0, 0, 0, 15, -2, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 23, -17, 0, 0, 0, 0, 35, -2, 0, 0, 0, 0, 23, 9, 0, 0, 0, 0, 31, 14, 0, 0, 0, 0, 43, 17, 0, 0, 0, 0, 45, 6, 0, 0, 0, 0, 38, -17, 0, 0, 0, 0, 58, -14, 0, 0, 0, 0, 54, -4, 0, 0, 0, 0, 65, 1, 0, 0, 0, 0, 62, 16, 0, 0, 0, 0, 56, 5, 0, 0, 0, 0, 38, -2, 0, 0, 0, 0, 33, 7, 0, 0, 0, 0, 19, 18, 0, 0, 0, 0, 24, 2, 0, 0, 0, 0, 17, -10, 0, 0, 0, 0, -1, -14, 0, 0, 0, 0, -3, 2, 0, 0, 0, 0, -7, 13, 0, 0, 0, 0, -19, 6, 0, 0, 0, 0, -19, -7, 0, 0, 0, 0, -29, -18, 0, 0, 0, 0, -46, 5, 0, 0, 0, 0, -46, 15, 0, 0, 0, 0, -61, 0, 0, 0, 0, 0, -77, -9, 0, 0, 0, 0, -50, -9)
+}
+point_count = 42
+
+[sub_resource type="Curve2D" id="Curve2D_inbph"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 500, 232, 0, 0, 0, 0, -570, 230, 0, 0, 0, 0, -579, 213)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_2xsl7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -580, 212, 0, 0, 0, 0, -609, 147, 0, 0, 0, 0, -618, 16, 0, 0, 0, 0, -631, -51, 0, 0, 0, 0, -704, -61, 0, 0, 0, 0, -784, -77, 0, 0, 0, 0, -807, -138, 0, 0, 0, 0, -809, -165, 0, 0, 0, 0, -774, -159)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_7mfl3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -580, 212, 0, 0, 0, 0, -607, 148, 0, 0, 0, 0, -614, 88, 0, 0, 0, 0, -615, 28, 0, 0, 0, 0, -613, -33, 0, 0, 0, 0, -619, -107, 0, 0, 0, 0, -612, -161, 0, 0, 0, 0, -600, -210, 0, 0, 0, 0, -568, -246, 0, 0, 0, 0, -529, -241, 0, 0, 0, 0, -529, -218)
+}
+point_count = 11
+
+[sub_resource type="Curve2D" id="Curve2D_sp8lu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -580, 212, 0, 0, 0, 0, -612, 148, 0, 0, 0, 0, -679, 129, 0, 0, 0, 0, -741, 130, 0, 0, 0, 0, -807, 106, 0, 0, 0, 0, -802, 68, 0, 0, 0, 0, -774, 57)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_kjva8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -580, 212, 0, 0, 0, 0, -598, 149, 0, 0, 0, 0, -566, 125, 0, 0, 0, 0, -535, 124, 0, 0, 0, 0, -492, 128, 0, 0, 0, 0, -472, 126, 0, 0, 0, 0, -488, 91)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_x72ri"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -579, 214, 0, 0, 0, 0, -569, 231, 0, 0, 0, 0, -558, 240, 0, 0, 0, 0, -597, 244, 0, 0, 0, 0, -953, 227)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skwh0"]
+size = Vector2(153, 42)
+
+[node name="Main" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_fgyic")
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_0eh56")
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="Objects" type="StaticBody2D" parent="Collisions"]
+
+[node name="Table1" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(138, 110)
+shape = SubResource("CircleShape2D_exeg7")
+
+[node name="Table2" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(335, 110)
+shape = SubResource("CircleShape2D_exeg7")
+
+[node name="Table3" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(139, 302)
+shape = SubResource("CircleShape2D_exeg7")
+
+[node name="Table4" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(338, 303)
+shape = SubResource("CircleShape2D_exeg7")
+
+[node name="Table" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(935, 256)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_37mbf")
+
+[node name="Counter" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(868, 36)
+shape = SubResource("RectangleShape2D_8ocwd")
+
+[node name="Borders" type="StaticBody2D" parent="Collisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Borders"]
+polygon = PackedVector2Array(1272, 432, 464, 430, 464, 256, 446, 257, 448, 430, 308, 430, 308, 448, 1280, 450, 1281, 719, -1, 721, -1, 446, 162, 446, 162, 432, -1, 432, 0, -1, 448, -1, 448, 176, 462, 175, 465, 70, 1275, 73, 1280, 445, 1311, 391, 1318, -22, 472, -77, -65, -84, -70, 792, 1346, 794, 1316, 407, 1280, 450)
+
+[node name="Paths" type="Node2D" parent="."]
+position = Vector2(1030, 127)
+script = ExtResource("3_mrthl")
+
+[node name="Table" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_2ahi0")
+
+[node name="belt" type="TextureRect" parent="Paths"]
+z_index = 1
+offset_left = 14.0
+offset_top = -119.0
+offset_right = 26.0
+offset_bottom = -58.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_vt8ao")
+
+[node name="Start" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_g1t1c")
+
+[node name="FoodTimer" type="Timer" parent="Paths"]
+wait_time = 4.0
+autostart = true
+
+[node name="RatSpawn" type="Node2D" parent="."]
+position = Vector2(422, 571)
+
+[node name="Path" type="Path2D" parent="RatSpawn"]
+curve = SubResource("Curve2D_ajjv2")
+
+[node name="PathF" type="PathFollow2D" parent="RatSpawn/Path"]
+position = Vector2(-2, 1)
+rotation = -2.3259
+
+[node name="Rat" type="AnimatedSprite2D" parent="RatSpawn/Path/PathF"]
+self_modulate = Color(0.691285, 0.665815, 0.691238, 1)
+texture_filter = 1
+position = Vector2(-1.78886, 1.34167)
+rotation = -2.67795
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("7_rk0ur")
+
+[node name="RespawnTimer" type="Timer" parent="RatSpawn"]
+one_shot = true
+
+[node name="TextureRect" type="TextureRect" parent="RatSpawn"]
+offset_left = -162.0
+offset_top = -63.0
+offset_right = -82.0
+offset_bottom = -31.0
+scale = Vector2(4, 4)
+texture = ExtResource("8_q6ys3")
+
+[node name="PeoplePaths" type="Node2D" parent="."]
+position = Vector2(848, 267)
+script = ExtResource("6_04lj1")
+
+[node name="Start" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_inbph")
+
+[node name="Table1" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_2xsl7")
+
+[node name="Table2" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_7mfl3")
+
+[node name="Table3" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_sp8lu")
+
+[node name="Table4" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_kjva8")
+
+[node name="Leave" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_x72ri")
+
+[node name="CustomerTimer" type="Timer" parent="PeoplePaths"]
+wait_time = 10.0
+autostart = true
+
+[node name="Rat" parent="." instance=ExtResource("6_sipp8")]
+position = Vector2(937, 269)
+
+[node name="Rat2" parent="." instance=ExtResource("6_sipp8")]
+position = Vector2(1014, 269)
+
+[node name="Rat3" parent="." instance=ExtResource("6_sipp8")]
+position = Vector2(848, 267)
+
+[node name="Player" parent="." instance=ExtResource("2_fe4cs")]
+position = Vector2(233, 393)
+
+[node name="Sewer" type="Node2D" parent="Player"]
+position = Vector2(-234, -393)
+
+[node name="Label" type="Label" parent="Player/Sewer"]
+offset_left = 168.0
+offset_top = 326.0
+offset_right = 302.0
+offset_bottom = 349.0
+text = "Catch Rat (Space)"
+
+[node name="Sewer" type="Area2D" parent="."]
+script = ExtResource("10_p7oxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer"]
+position = Vector2(418.5, 569)
+shape = SubResource("RectangleShape2D_skwh0")
+
+[connection signal="timeout" from="Paths/FoodTimer" to="." method="_on_food_timer_timeout"]
+[connection signal="timeout" from="RatSpawn/RespawnTimer" to="." method="_on_ratrespawn_timer_timeout"]
+[connection signal="timeout" from="PeoplePaths/CustomerTimer" to="PeoplePaths" method="_on_customer_timer_timeout"]
+[connection signal="area_entered" from="Sewer" to="Sewer" method="_on_sewerarea_entered"]
+[connection signal="area_exited" from="Sewer" to="Sewer" method="_on_area_exited"]

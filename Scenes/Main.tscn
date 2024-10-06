@@ -1,0 +1,501 @@
+[gd_scene load_steps=36 format=3 uid="uid://cvxstex4xqsxp"]
+
+[ext_resource type="Texture2D" uid="uid://bihynxcxfbcjp" path="res://Scenes/textures/Main_background.png" id="1_0eh56"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main.gd" id="1_fgyic"]
+[ext_resource type="PackedScene" uid="uid://ckyjk5cckkm3i" path="res://Entities/Player.tscn" id="2_fe4cs"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main_paths.gd" id="3_mrthl"]
+[ext_resource type="Texture2D" uid="uid://bsgrustk0cpgc" path="res://Scenes/textures/Main_belt.png" id="3_vt8ao"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main_people_paths.gd" id="6_04lj1"]
+[ext_resource type="SpriteFrames" uid="uid://bq7iu278c4s5q" path="res://Entities/textures/WildRat.aseprite" id="7_rk0ur"]
+[ext_resource type="Texture2D" uid="uid://0u15ete11mnq" path="res://Scenes/textures/Main_sewer.png" id="8_q6ys3"]
+[ext_resource type="PackedScene" uid="uid://bava5fm222tqt" path="res://Objects/PreparedFood.tscn" id="10_5dvab"]
+[ext_resource type="PackedScene" uid="uid://cy1s4edojxmfj" path="res://Objects/Ratpost.tscn" id="10_6q2ht"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main_Sewer.gd" id="10_p7oxq"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main_Plates.gd" id="11_ss30r"]
+[ext_resource type="PackedScene" uid="uid://cjexvhg3buumo" path="res://Objects/Table.tscn" id="13_40x4p"]
+[ext_resource type="SpriteFrames" uid="uid://r1ipbcgll1tv" path="res://Objects/textures/Plate.aseprite" id="13_si4r3"]
+[ext_resource type="Script" path="res://Scenes/scripts/Main_Trash.gd" id="14_lcmvb"]
+[ext_resource type="Script" path="res://Scenes/GameOver.gd" id="16_gfodx"]
+[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="17_73opt"]
+[ext_resource type="AudioStream" uid="uid://buh6p040juc28" path="res://Audio/stopwait.ogg" id="18_0dwn1"]
+[ext_resource type="AudioStream" uid="uid://bebcws6y36yfh" path="res://Audio/music/Main.ogg" id="19_okr02"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exeg7"]
+radius = 43.0116
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ocwd"]
+size = Vector2(808, 76)
+
+[sub_resource type="Curve2D" id="Curve2D_2ahi0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 34, 109, 0, 0, 0, 0, -336, 108, 0, 0, 0, 0, -340, 116)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_g1t1c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -137, -107, 0, 0, 0, 0, -139, -81, 0, 0, 0, 0, -5, -81, 0, 0, 0, 0, 22, -96, 0, 0, 0, 0, 38, -96, 0, 0, 0, 0, 38, 102)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_ajjv2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -19, 6, 0, 0, 0, 0, -44, -13, 0, 0, 0, 0, -69, 6, 0, 0, 0, 0, 5, -16, 0, 0, 0, 0, 20, 10, 0, 0, 0, 0, 60, 8, 0, 0, 0, 0, 45, -10, 0, 0, 0, 0, 29, -9)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_inbph"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 500, 232, 0, 0, 0, 0, -572, 234, 0, 0, 0, 0, -601, 226)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_2xsl7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -602, 223, 0, 0, 0, 0, -609, 147, 0, 0, 0, 0, -618, 16, 0, 0, 0, 0, -631, -51, 0, 0, 0, 0, -704, -61, 0, 0, 0, 0, -784, -77, 0, 0, 0, 0, -817, -95, 0, 0, 0, 0, -829, -120, 0, 0, 0, 0, -827, -140, 0, 0, 0, 0, -824, -157, 0, 0, 0, 0, -810, -168, 0, 0, 0, 0, -791, -166, 0, 0, 0, 0, -767, -164)
+}
+point_count = 13
+
+[sub_resource type="Curve2D" id="Curve2D_7mfl3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -601, 225, 0, 0, 0, 0, -607, 148, 0, 0, 0, 0, -614, 88, 0, 0, 0, 0, -615, 28, 0, 0, 0, 0, -613, -33, 0, 0, 0, 0, -619, -107, 0, 0, 0, 0, -619, -166, 0, 0, 0, 0, -615, -197, 0, 0, 0, 0, -606, -216, 0, 0, 0, 0, -594, -229, 0, 0, 0, 0, -582.919, -242.135, 0, 0, 0, 0, -566, -249, 0, 0, 0, 0, -548, -247, 0, 0, 0, 0, -534, -234, 0, 0, 0, 0, -529, -216)
+}
+point_count = 15
+
+[sub_resource type="Curve2D" id="Curve2D_sp8lu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -601, 219, 0, 0, 0, 0, -612, 148, 0, 0, 0, 0, -679, 129, 0, 0, 0, 0, -741, 130, 0, 0, 0, 0, -787, 118, 0, 0, 0, 0, -801, 105, 0, 0, 0, 0, -806, 86, 0, 0, 0, 0, -797, 68, 0, 0, 0, 0, -775, 58)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_kjva8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -602, 220, 0, 0, 0, 0, -598, 149, 0, 0, 0, 0, -566, 125, 0, 0, 0, 0, -542, 123, 0, 0, 0, 0, -526, 115, 0, 0, 0, 0, -521, 100)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_x72ri"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -600, 225, 0, 0, 0, 0, -626, 245, 0, 0, 0, 0, -658, 251, 0, 0, 0, 0, -690, 235, 0, 0, 0, 0, -721, 218, 0, 0, 0, 0, -761, 220, 0, 0, 0, 0, -786, 235, 0, 0, 0, 0, -953, 227)
+}
+point_count = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skwh0"]
+size = Vector2(153, 42)
+
+[sub_resource type="Curve2D" id="Curve2D_4r18c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccxc5"]
+size = Vector2(96, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrm6t"]
+size = Vector2(54, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3domf"]
+bg_color = Color(0.2117, 0.239105, 0.29, 1)
+
+[node name="Main" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_fgyic")
+has_rat = null
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_0eh56")
+
+[node name="Collisions" type="Node2D" parent="."]
+visible = false
+
+[node name="Objects" type="StaticBody2D" parent="Collisions"]
+
+[node name="Table1" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(138, 110)
+shape = SubResource("CircleShape2D_exeg7")
+
+[node name="Table2" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(335, 110)
+shape = SubResource("CircleShape2D_exeg7")
+
+[node name="Table3" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(139, 302)
+shape = SubResource("CircleShape2D_exeg7")
+
+[node name="Table4" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(338, 303)
+shape = SubResource("CircleShape2D_exeg7")
+
+[node name="Table" type="CollisionPolygon2D" parent="Collisions/Objects"]
+position = Vector2(935, 252)
+rotation = 1.5708
+polygon = PackedVector2Array(-68.9993, 271, -67.0006, -169, 27.9994, -169, 29.001, 271)
+
+[node name="Counter" type="CollisionShape2D" parent="Collisions/Objects"]
+position = Vector2(868, 36)
+shape = SubResource("RectangleShape2D_8ocwd")
+
+[node name="Borders" type="StaticBody2D" parent="Collisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/Borders"]
+polygon = PackedVector2Array(1272, 432, 464, 430, 464, 265, 446, 265, 448, 430, 313, 432, 316, 449, 1280, 450, 1281, 719, -1, 721, -1, 446, 156, 448, 156, 433, -1, 432, 0, -1, 448, -1, 449, 159, 465, 160, 465, 70, 1275, 73, 1280, 445, 1450, 417, 1445, -141, 465, -189, -202, -197, -200, 930, 1453, 898, 1450, 417, 1280, 450)
+
+[node name="Paths" type="Node2D" parent="."]
+position = Vector2(1030, 127)
+script = ExtResource("3_mrthl")
+
+[node name="Table" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_2ahi0")
+
+[node name="belt" type="TextureRect" parent="Paths"]
+z_index = 1
+offset_left = 14.0
+offset_top = -119.0
+offset_right = 26.0
+offset_bottom = -58.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_vt8ao")
+
+[node name="Start" type="Path2D" parent="Paths"]
+z_index = 1
+curve = SubResource("Curve2D_g1t1c")
+
+[node name="FoodTimer" type="Timer" parent="Paths"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="RatSpawn" type="Node2D" parent="."]
+position = Vector2(422, 571)
+
+[node name="Path" type="Path2D" parent="RatSpawn"]
+curve = SubResource("Curve2D_ajjv2")
+
+[node name="PathF" type="PathFollow2D" parent="RatSpawn/Path"]
+position = Vector2(-19, 6)
+rotation = -2.49172
+
+[node name="Rat" type="AnimatedSprite2D" parent="RatSpawn/Path/PathF"]
+self_modulate = Color(0.691285, 0.665815, 0.691238, 1)
+texture_filter = 1
+position = Vector2(-1.78886, 1.34167)
+rotation = -2.67795
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("7_rk0ur")
+
+[node name="RespawnTimer" type="Timer" parent="RatSpawn"]
+one_shot = true
+
+[node name="TextureRect" type="TextureRect" parent="RatSpawn"]
+offset_left = -162.0
+offset_top = -63.0
+offset_right = -82.0
+offset_bottom = -31.0
+scale = Vector2(4, 4)
+texture = ExtResource("8_q6ys3")
+
+[node name="PeoplePaths" type="Node2D" parent="."]
+position = Vector2(848, 267)
+script = ExtResource("6_04lj1")
+
+[node name="Start" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_inbph")
+
+[node name="Table1" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_2xsl7")
+
+[node name="Table2" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_7mfl3")
+
+[node name="Table3" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_sp8lu")
+
+[node name="Table4" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_kjva8")
+
+[node name="Leave" type="Path2D" parent="PeoplePaths"]
+curve = SubResource("Curve2D_x72ri")
+
+[node name="CustomerTimer" type="Timer" parent="PeoplePaths"]
+wait_time = 10.0
+autostart = true
+
+[node name="Player" parent="." instance=ExtResource("2_fe4cs")]
+position = Vector2(233, 403)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../PlayerInfo")
+update_rotation = false
+update_scale = false
+
+[node name="PlayerInfo" type="Node2D" parent="."]
+top_level = true
+position = Vector2(233, 403)
+
+[node name="Label" type="Label" parent="PlayerInfo"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -67.0
+offset_right = 749.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+
+[node name="Ratpost" parent="." instance=ExtResource("10_6q2ht")]
+position = Vector2(824, 43)
+
+[node name="extra" type="ColorRect" parent="Ratpost"]
+offset_left = -56.0
+offset_top = -31.0
+offset_right = -48.0
+offset_bottom = -23.0
+color = Color(0.568627, 0.858824, 0.411765, 1)
+
+[node name="Ratpost2" parent="." instance=ExtResource("10_6q2ht")]
+position = Vector2(755, 256)
+
+[node name="extra" type="ColorRect" parent="Ratpost2"]
+offset_left = 29.0
+offset_top = -244.0
+offset_right = 33.0
+offset_bottom = -240.0
+color = Color(0.568627, 0.858824, 0.411765, 1)
+
+[node name="output" parent="Ratpost2" instance=ExtResource("10_5dvab")]
+position = Vector2(1, -54)
+
+[node name="Ratpost3" parent="." instance=ExtResource("10_6q2ht")]
+position = Vector2(850, 256)
+
+[node name="extra" type="ColorRect" parent="Ratpost3"]
+offset_left = -54.0
+offset_top = -244.0
+offset_right = -50.0
+offset_bottom = -240.0
+color = Color(0.568627, 0.858824, 0.411765, 1)
+
+[node name="output" parent="Ratpost3" instance=ExtResource("10_5dvab")]
+position = Vector2(1, -52)
+
+[node name="Ratpost4" parent="." instance=ExtResource("10_6q2ht")]
+position = Vector2(933, 256)
+
+[node name="extra" type="ColorRect" parent="Ratpost4"]
+offset_left = -149.0
+offset_top = -236.0
+offset_right = -145.0
+offset_bottom = -232.0
+color = Color(0.568627, 0.858824, 0.411765, 1)
+
+[node name="output" parent="Ratpost4" instance=ExtResource("10_5dvab")]
+position = Vector2(-1, -52)
+
+[node name="Ratpost5" parent="." instance=ExtResource("10_6q2ht")]
+position = Vector2(1012, 256)
+
+[node name="extra" type="ColorRect" parent="Ratpost5"]
+offset_left = -216.0
+offset_top = -236.0
+offset_right = -212.0
+offset_bottom = -232.0
+color = Color(0.568627, 0.858824, 0.411765, 1)
+
+[node name="output" parent="Ratpost5" instance=ExtResource("10_5dvab")]
+position = Vector2(0, -52)
+
+[node name="Sewer" type="Area2D" parent="."]
+script = ExtResource("10_p7oxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sewer"]
+position = Vector2(418.5, 569)
+shape = SubResource("RectangleShape2D_skwh0")
+
+[node name="Plates" type="Area2D" parent="."]
+script = ExtResource("11_ss30r")
+
+[node name="Plate" type="AnimatedSprite2D" parent="Plates" groups=["plate"]]
+position = Vector2(684, 43)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("13_si4r3")
+autoplay = "default"
+speed_scale = 0.2
+
+[node name="Path" type="Path2D" parent="Plates/Plate"]
+curve = SubResource("Curve2D_4r18c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plates"]
+position = Vector2(685, 67.5)
+shape = SubResource("RectangleShape2D_ccxc5")
+
+[node name="Trash" type="Area2D" parent="."]
+position = Vector2(688, 238)
+script = ExtResource("14_lcmvb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash"]
+position = Vector2(-17, 0)
+shape = SubResource("RectangleShape2D_vrm6t")
+
+[node name="Here" type="AnimatedSprite2D" parent="Trash"]
+visible = false
+position = Vector2(-16, -2)
+scale = Vector2(4, 4)
+speed_scale = 0.2
+
+[node name="Tables" type="Node2D" parent="."]
+
+[node name="Table1" parent="Tables" instance=ExtResource("13_40x4p")]
+position = Vector2(138, 110)
+
+[node name="Table2" parent="Tables" instance=ExtResource("13_40x4p")]
+position = Vector2(334, 110)
+
+[node name="Table3" parent="Tables" instance=ExtResource("13_40x4p")]
+position = Vector2(138, 301)
+
+[node name="Table4" parent="Tables" instance=ExtResource("13_40x4p")]
+position = Vector2(338, 301)
+
+[node name="Stats" type="Label" parent="."]
+z_index = 1001
+offset_left = 4.0
+offset_top = 573.0
+offset_right = 388.0
+offset_bottom = 796.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 80
+text = "Served: 
+Fails: 5/10"
+vertical_alignment = 1
+
+[node name="StatTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Game Over" type="Panel" parent="."]
+process_mode = 3
+visible = false
+z_index = 100
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3domf")
+script = ExtResource("16_gfodx")
+
+[node name="Label" type="Label" parent="Game Over"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.5
+offset_top = -308.0
+offset_right = 256.5
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "Ratsaurant Rush"
+
+[node name="Button2" type="Button" parent="Game Over"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -144.0
+offset_right = 138.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Exit To Menu"
+
+[node name="MainMenu" type="Panel" parent="."]
+process_mode = 3
+z_index = 100
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3domf")
+script = ExtResource("17_73opt")
+
+[node name="Label" type="Label" parent="MainMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.5
+offset_top = -308.0
+offset_right = 256.5
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 64
+text = "Ratsaurant Rush"
+
+[node name="Button" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -144.0
+offset_right = 110.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Play Game"
+
+[node name="Label2" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 531.0
+offset_right = 1255.0
+offset_bottom = 715.0
+theme_override_font_sizes/font_size = 32
+text = "WASD or Arrow keys to move
+
+SPACE or ENTER to interact"
+horizontal_alignment = 2
+
+[node name="stopwait" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("18_0dwn1")
+volume_db = -12.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("19_okr02")
+autoplay = true
+
+[connection signal="timeout" from="Paths/FoodTimer" to="." method="_on_food_timer_timeout"]
+[connection signal="timeout" from="RatSpawn/RespawnTimer" to="." method="_on_ratrespawn_timer_timeout"]
+[connection signal="timeout" from="PeoplePaths/CustomerTimer" to="PeoplePaths" method="_on_customer_timer_timeout"]
+[connection signal="area_entered" from="Sewer" to="Sewer" method="_on_sewerarea_entered"]
+[connection signal="area_exited" from="Sewer" to="Sewer" method="_on_area_exited"]
+[connection signal="area_entered" from="Plates" to="Plates" method="_on_area_entered"]
+[connection signal="area_exited" from="Plates" to="Plates" method="_on_area_exited"]
+[connection signal="area_entered" from="Trash" to="Trash" method="_on_area_entered"]
+[connection signal="area_exited" from="Trash" to="Trash" method="_on_area_exited"]
+[connection signal="timeout" from="StatTimer" to="." method="_on_stat_timer_timeout"]
+[connection signal="pressed" from="Game Over/Button2" to="Game Over" method="_on_button_2_pressed"]
+[connection signal="pressed" from="MainMenu/Button" to="MainMenu" method="_on_button_pressed"]

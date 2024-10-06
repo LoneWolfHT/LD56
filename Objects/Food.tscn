@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://6h7u6wte66v2"]
+
+[ext_resource type="Texture2D" uid="uid://drgkpplo7ugkp" path="res://Objects/textures/Food_cheese.png" id="1_4p7ph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24ss6"]
+size = Vector2(32, 32)
+
+[node name="Food" type="PathFollow2D" groups=["food"]]
+texture_filter = 1
+rotates = false
+loop = false
+
+[node name="Texture" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_4p7ph")
+
+[node name="Cheese" type="Area2D" parent="." groups=["food"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cheese"]
+shape = SubResource("RectangleShape2D_24ss6")

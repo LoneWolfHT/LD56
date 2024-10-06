@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://bava5fm222tqt"]
+
+[ext_resource type="Script" path="res://Objects/scripts/PreparedFood.gd" id="1_8h8ts"]
+[ext_resource type="SpriteFrames" uid="uid://r1ipbcgll1tv" path="res://Objects/textures/Plate.aseprite" id="2_ed5ve"]
+[ext_resource type="SpriteFrames" uid="uid://dckk0v6xtti8" path="res://Objects/textures/Placehere.aseprite" id="3_boa3t"]
+[ext_resource type="SpriteFrames" uid="uid://c413vg8dhlu2t" path="res://Objects/textures/Placehere_go.aseprite" id="4_a3u64"]
+[ext_resource type="SpriteFrames" uid="uid://i6ki6ehr3qgb" path="res://Objects/textures/Ready.aseprite" id="5_a1umw"]
+
+[sub_resource type="Curve2D" id="Curve2D_svt7j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lpyg"]
+size = Vector2(10, 68)
+
+[node name="PreparedFood" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_8h8ts")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["foodplate"]]
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("2_ed5ve")
+speed_scale = 0.0
+
+[node name="Path" type="Path2D" parent="Sprite"]
+scale = Vector2(0.25, 0.25)
+curve = SubResource("Curve2D_svt7j")
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_1lpyg")
+
+[node name="Placehere" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -11)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("3_boa3t")
+frame_progress = 0.616042
+speed_scale = 0.25
+
+[node name="Placego" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -23)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("4_a3u64")
+autoplay = "default"
+frame_progress = 0.862554
+speed_scale = 0.25
+
+[node name="Ready" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -48)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("5_a1umw")
+speed_scale = 0.2
+
+[connection signal="area_entered" from="PlayerDetect" to="." method="_on_player_detect_area_entered"]
+[connection signal="area_exited" from="PlayerDetect" to="." method="_on_player_detect_area_exited"]

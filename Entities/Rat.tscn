@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg1hmsde7laai"]
+
+[ext_resource type="Script" path="res://Entities/scripts/Rat.gd" id="1_85ppl"]
+[ext_resource type="SpriteFrames" uid="uid://w4u03vsm34g" path="res://Entities/textures/Rat.aseprite" id="1_ow40g"]
+[ext_resource type="SpriteFrames" uid="uid://bq7iu278c4s5q" path="res://Entities/textures/WildRat.aseprite" id="2_t6vxs"]
+[ext_resource type="AudioStream" uid="uid://djkxptb14gj71" path="res://Audio/ratdie.ogg" id="4_t1uja"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rbami"]
+radius = 3.0
+height = 62.0
+
+[node name="Rat" type="Node2D" groups=["rat"]]
+texture_filter = 1
+script = ExtResource("1_85ppl")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_t6vxs")
+
+[node name="TameSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_ow40g")
+
+[node name="TameArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TameArea"]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_rbami")
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_t1uja")
+
+[connection signal="area_entered" from="TameArea" to="." method="_on_tame_area_area_entered"]

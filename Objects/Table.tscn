@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjexvhg3buumo"]
+
+[ext_resource type="Script" path="res://Objects/scripts/Table.gd" id="1_74hj6"]
+[ext_resource type="SpriteFrames" uid="uid://dckk0v6xtti8" path="res://Objects/textures/Placehere.aseprite" id="1_j8d62"]
+[ext_resource type="SpriteFrames" uid="uid://c413vg8dhlu2t" path="res://Objects/textures/Placehere_go.aseprite" id="2_xb1ly"]
+[ext_resource type="SpriteFrames" uid="uid://vd3dmo0a3wf3" path="res://Objects/textures/Waiting.aseprite" id="3_wd0vx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yhvh4"]
+radius = 51.6236
+
+[node name="Table1" type="Node2D"]
+script = ExtResource("1_74hj6")
+
+[node name="Attach" type="Node2D" parent="."]
+
+[node name="Placehere" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("1_j8d62")
+frame_progress = 0.616042
+speed_scale = 0.25
+
+[node name="Placego" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -23)
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("2_xb1ly")
+autoplay = "default"
+frame_progress = 0.862554
+speed_scale = 0.25
+
+[node name="Waiting" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = ExtResource("3_wd0vx")
+frame_progress = 0.446541
+speed_scale = 0.2
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_yhvh4")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

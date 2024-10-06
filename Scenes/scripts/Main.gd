@@ -63,7 +63,9 @@ func _on_stat_timer_timeout():
 
 func failed():
 	failcount += 1
+	_on_stat_timer_timeout()
 	$stopwait.play()
 
 	if failcount >= FAIL_MAX:
 		$"Game Over".show()
+		get_tree().paused = true
